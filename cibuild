@@ -15,6 +15,7 @@ cd temp
 # mv ./.git ./_site
 # cd _site
 
+pip install pyyaml
 python scripts/generate_jekyll_blueprint.py 
 
 git branch -m master
