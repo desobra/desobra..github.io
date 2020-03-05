@@ -89,7 +89,7 @@ categories: [{author_category}, {author_id}]
 
 file_names = [f for f in listdir(root_data) if isfile(join(root_data, f)) and f != ".DS_Store"]
 contents = [open(f'{root_data}/{file_name}', 'r').read() for file_name in file_names]
-authors = [yaml.load(content)[0] for content in contents]
+authors = [yaml.load(content, Loader=yaml.FullLoader)[0] for content in contents]
 
 for author in authors:
     generate_author(author)
