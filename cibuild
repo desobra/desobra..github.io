@@ -15,9 +15,8 @@ cd temp
 # mv ./.git ./_site
 # cd _site
 
-gem install bundler
-gem install jekyll
-gem install jekyll-paginate-v2
+bundle install jekyll
+bundle install jekyll-paginate-v2
 
 pip install pyyaml
 python scripts/generate_jekyll_blueprint.py 
