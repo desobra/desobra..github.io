@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+{% for file_name_author in site.data %}
+	{% for title in file_name_author[1][0].titles %}
+		{% if title.id == page.title_id %}
+			{% assign author = file_name_author[1][0] %}
+		    {% assign title = title %}
+	    {% endif %}
+	{% endfor %}
+{% endfor %}
+
+<!--
+	This is only used by post images
+ -->
+{% if author.category == 'image' %} 
+	<span class="title-post-black">{{ title.name }}</span><span class="date-post-black"> ({{ title.year }})</span>
+
+	</br>
+	<hr class="divider">
+	<span class="author-post-black"><a href="../../../../../../authors/{{author.id}}">{{ author.name }}</a></span>
+
+	<br><br><br>
+
+	<img src="/assets/img/{{title.image}}" class="center-image" alt="{{title.name}}"/>
+{% endif %}

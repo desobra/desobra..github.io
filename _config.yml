@@ -1,0 +1,32 @@
+exclude: ['scripts']
+
+plugins: 
+- jekyll-paginate-v2 
+
+collections:
+  titles:
+    output: true
+
+pagination:
+  enabled: true
+  per_page: 20
+  sort_reverse: 'true'
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: "authors/*"
+    values:
+      layout: "author"
+  - scope:
+      type: "titles"
+    values:
+      layout: "title"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
