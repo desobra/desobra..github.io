@@ -1,4 +1,7 @@
-language: python
+matrix:
+  include:
+    - language: python
+    - language: ruby
 branches:
   only:
   - sources
