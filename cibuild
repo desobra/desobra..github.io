@@ -9,12 +9,14 @@ fi
 # enable error reporting to the console
 set -e
 
-git clone https://${GH_TOKEN}@github.com/VictorAlbertos/VictorAlbertos.github.io.git  --branch develop temp
+git clone https://${GH_TOKEN}@github.com/VictorAlbertos/staging-desobra.github.io.git  --branch sources temp
 cd temp
 
-# push
-mv ./.git ./_site
-cd _site
+# mv ./.git ./_site
+# cd _site
+
+python scripts/generate_jekyll_blueprint.py 
+
 git branch -m master
 
 git add --all
