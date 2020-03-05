@@ -17,6 +17,7 @@ cd temp
 
 pip install pyyaml
 python scripts/generate_jekyll_blueprint.py 
+python scripts/prepare_gitignore_for_deployment.py
 
 git branch -m master
 
