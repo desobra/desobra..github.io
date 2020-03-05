@@ -9,7 +9,7 @@ fi
 # enable error reporting to the console
 set -e
 
-git clone https://${GH_TOKEN}@github.com/VictorAlbertos/staging-desobra.github.io.git  --branch sources temp
+git clone https://${GH_TOKEN}@github.com/VictorAlbertos/staging-desobra.git  --branch sources temp
 cd temp
 
 # mv ./.git ./_site
@@ -22,5 +22,5 @@ git branch -m master
 git add --all
 git commit -a -m "Travis #$TRAVIS_BUILD_NUMBER"
 
-git remote add site https://${GH_TOKEN}@github.com/VictorAlbertos/VictorAlbertos.github.io.git
+git remote add site https://${GH_TOKEN}@github.com/VictorAlbertos/staging-desobra.git
 git push --force site master
