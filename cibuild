@@ -10,7 +10,7 @@ fi
 # enable error reporting to the console
 set -e
 
-git clone https://${GH_TOKEN}@github.com/VictorAlbertos/desobra-sources.git  --branch sources temp
+git clone https://${GH_TOKEN}@github.com/VictorAlbertos/desobra-sources.git --branch master temp
 cd temp
 
 pip install pyyaml
@@ -33,4 +33,4 @@ python prepare_CNAME_for_production.py
 git add --all
 git commit -a -m "Travis CNAME #$TRAVIS_BUILD_NUMBER"
 git remote add production https://${GH_TOKEN}@github.com/desobra/desobra.github.io.git
-# git push --force production master
+git push --force production master
