@@ -13,12 +13,9 @@ set -e
 git clone https://${GH_TOKEN}@github.com/VictorAlbertos/staging-desobra.git  --branch sources temp
 cd temp
 
-sudo apt-get install python3.7
-python3
-
 pip install pyyaml
-python3 scripts/generate_jekyll_blueprint.py
-python3 scripts/prepare_gitignore_for_deployment.py
+python scripts/generate_jekyll_blueprint.py
+python scripts/prepare_gitignore_for_deployment.py
 jekyll build
 
 mv ./.git ./_site
