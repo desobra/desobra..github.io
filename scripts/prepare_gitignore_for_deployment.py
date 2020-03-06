@@ -1,7 +1,7 @@
-contents = f'''.sass-cache/
+contents = """".sass-cache/
 .jekyll-cache/
 .jekyll-metadata
-.idea'''
+.idea"""
 
 with open('.gitignore', "w") as text_file:
     text_file.write(contents)
