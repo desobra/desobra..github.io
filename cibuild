@@ -29,7 +29,7 @@ git remote add staging https://${GH_TOKEN}@github.com/VictorAlbertos/VictorAlber
 git push --force staging master
 
 
-python prepare_CNAME_for_production.py
+python ../scripts/prepare_CNAME_for_production.py
 git add --all
 git commit -a -m "Travis CNAME #$TRAVIS_BUILD_NUMBER"
 git remote add production https://${GH_TOKEN}@github.com/desobra/desobra.github.io.git
