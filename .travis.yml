@@ -1,15 +1,22 @@
 matrix:
   include:
     - language: python
+      before_script:
+        - pip install pyyaml
+      script:
+        - python scripts/generate_jekyll_blueprint.py
+        - python scripts/prepare_gitignore_for_deployment.py
     - language: ruby
+      script:
+        - jekyll build
       rvm:
         - 2.6
+    - language: minimal
+      after_script:
+        - chmod +x ./cibuild
+      script: ./cibuild
 branches:
   only:
     - sources
-before_script:
-  - chmod +x ./cibuild
-
-script: ./cibuild
 exclude: [vendor]
 sudo: false
