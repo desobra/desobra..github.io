@@ -10,7 +10,7 @@ fi
 # enable error reporting to the console
 set -e
 
-git clone https://${GH_TOKEN}@github.com/VictorAlbertos/staging-desobra.git  --branch sources temp
+git clone https://${GH_TOKEN}@github.com/VictorAlbertos/desobra-sources.git  --branch sources temp
 cd temp
 
 pip install pyyaml
@@ -25,6 +25,12 @@ git branch -m master
 
 git add --all
 git commit -a -m "Travis #$TRAVIS_BUILD_NUMBER"
+git remote add staging https://${GH_TOKEN}@github.com/VictorAlbertos/VictorAlbertos.github.io.git
+git push --force staging master
 
-git remote add site https://${GH_TOKEN}@github.com/desobra/desobra.github.io.git
-git push --force site master
+
+python prepare_CNAME_for_production.py
+git add --all
+git commit -a -m "Travis CNAME #$TRAVIS_BUILD_NUMBER"
+git remote add production https://${GH_TOKEN}@github.com/desobra/desobra.github.io.git
+# git push --force production master
