@@ -2,6 +2,8 @@ language: ruby
 rvm:
   - 2.6
 before_script:
+  - python -V
+  - pip install pyyaml
   - chmod +x ./scripts/github-clone
   - chmod +x ./scripts/github-push
 script:
