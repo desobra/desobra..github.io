@@ -26,5 +26,5 @@ git branch -m master
 git add --all
 git commit -a -m "Travis #$TRAVIS_BUILD_NUMBER"
 
-git remote add site https://${GH_TOKEN}@github.com/desobra/staging.git
+git remote add site https://${GH_TOKEN}@github.com/desobra/desobra.github.io.git
 git push --force site master
