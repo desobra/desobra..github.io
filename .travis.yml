@@ -1,33 +1,15 @@
-stages:
-  - github-clone
-  - python-setup
-  - ruby-setup
-  - github-push
-matrix:
-  include:
-    - language: minimal
-      stage: "github-clone"
-      before_script:
-        - chmod +x ./scripts/github-clone
-      script: ./scripts/github-clone
-    - language: python
-      stage: "python-setup"
-      before_script:
-        - pip install pyyaml
-      script:
-        - python scripts/generate_jekyll_blueprint.py
-        - python scripts/prepare_gitignore_for_deployment.py
-    - language: ruby
-      stage: "ruby-setup"
-      script:
-        - jekyll build
-      rvm:
-        - 2.6
-    - language: minimal
-      stage: "github-push"
-      before_script:
-        - chmod +x ./scripts/github-push
-      script: ./scripts/github-push
+language: ruby
+rvm:
+  - 2.6
+before_script:
+  - chmod +x ./scripts/github-clone
+  - chmod +x ./scripts/github-push
+script:
+  - ./scripts/github-clone
+  - python scripts/generate_jekyll_blueprint.py
+  - python scripts/prepare_gitignore_for_deployment.py
+  - jekyll build
+  - ./scripts/github-push
 branches:
   only:
     - sources
