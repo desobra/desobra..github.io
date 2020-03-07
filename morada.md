@@ -1,6 +1,8 @@
 ---
 title: Morada
+title_page: Morada
 ---
+
 
 *Desobra*, título que quita cualquier otro a este proyecto, no aporta, sin embargo, su condición de título: habilita el espacio para anunciar la falta de sentido a la explicación que aquí se propone. Desobra, término acuñado por Maurice Blanchot (o más bien por su traductor), es, para nosotros, la experiencia literaria de una obra cuyo origen arranca en su término; pero escribimos *Desobra* no como el fin de una reflexión sobre esa experiencia literaria, sino como la experiencia en sí misma que, así reflexionada, en nada se distingue del fin que no puede alcanzar.<br><br>
 
