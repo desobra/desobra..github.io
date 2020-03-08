@@ -1,0 +1,20 @@
+
+  <div class="grid-container">
+    {% for post in paginator.posts %}
+      {% for file_name_author in site.data %}
+      {% if file_name_author[1][0].id == post.categories[1] %}
+      {% assign author = file_name_author[1][0] %}
+      {% endif %}
+    {% endfor %}
+    {% assign title = author.titles | where: 'id', post.title_id | first %}
+
+    <a href="{{post.url}}"><div class="grid-item">
+      <img src="/assets/img/{{title.image}}" width="600px" height="350px" class="centered-and-cropped grayscale" alt="{{title.name}}"/>
+      <i>{{ title.name }}</i>, <span> {{ author.name }} </span>
+    </div>
+  </a>
+  {% endfor %}
+  </div>
+
+
+{% include pagination_links.html %}

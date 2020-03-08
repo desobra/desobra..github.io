@@ -1,0 +1,80 @@
+<div class="card" style="width:100%">
+    {% if include.hide_author %}
+    <span class="placeholder-top">
+        <img class="avatar" style="filter: grayscale(100%) contrast(120%)"
+             src="/assets/img/victor_albertos.jpeg" alt="Card image">
+        <span class="title-with-avatar">{{page.title_page_full}}</span>
+        <div class="wrapper-black-background-bottom">
+
+        </div>
+    </span>
+
+    {% else %}
+    <img class="card-img-top" style="filter: grayscale(100%) contrast(120%)"
+         src="/assets/img/polvos.jpg" alt="Card image">
+    <div class="card-container black-background">
+        <div class="wrapper-black-background-bottom">
+            <span class="title-post-none">{{page.title_page_full}}</span>
+        </div>
+    </div>
+    {% endif %}
+    {% for post in paginator.posts %}
+    {% for file_name_author in site.data %}
+    {% if file_name_author[1][0].id == post.categories[1] %}
+    {% assign author = file_name_author[1][0] %}
+    {% endif %}
+    {% endfor %}
+    {% assign title = author.titles | where: 'id', post.title_id | first %}
+    {% assign fragment = title.fragments | where: 'number', post.fragment | first %}
+
+    <p class="block">
+        {% if fragment %}
+        <a href="../../../titles/{{title.id}}#{{fragment.number}}">
+            <div class="card-container-preview-title">
+                <div>{% if fragment.preview %}
+    <p>
+
+        {{ fragment.preview }}</p>{% else %}<p>{{ fragment.text | truncate: 400 }}</p>{% endif %}
+    {% else %}
+    <a href="../../../titles/{{title.id}}">
+        <div class="card-container-preview-title">
+            <div>
+                {% if title.preview %}
+                <p>{{ title.preview }}</p>
+                {% else %}
+                <p>{{ title.text | truncate: 400 }}</p>
+                {% endif %}
+                {% endif %}
+                </br>
+                {% if include.hide_author %}
+                {% if title.format-title == 'italic' %}
+                <p><span class="post-preview-title-italic">{{ title.name }}</span><span class="date-post-preview"> ({{ title.year }})</span>
+                </p>
+                {% elsif title.format-title == 'quotes' %}
+                <p><span class="post-preview-title-none">«{{title.name }}»</span><span class="date-post-preview"> ({{ title.year }})</span>
+                </p>
+                {% else %}
+                <p><span class="post-preview-title-none">{{ title.name }}</span><span class="date-post-preview"> ({{ title.year }})</span>
+                </p>
+                {% endif %}
+                {% else %}
+                {% if title.format-title == 'italic' %}
+                <p><span class="post-preview-title-italic">{{ title.name }}</span><span class="date-post-preview"> ({{ title.year }})</span>,
+                    <span class="post-preview-author"> {{ author.name }} </span></p>
+                {% elsif title.format-title == 'quotes' %}
+                <p><span class="post-preview-title-none">«{{ title.name }}»</span><span class="date-post-preview"> ({{ title.year }})</span>,
+                    <span class="post-preview-author"> {{ author.name }} </span></p>
+                {% else %}
+                <p><span class="post-preview-title-none">{{ title.name }}</span><span class="date-post-preview"> ({{ title.year }})</span>,
+                    <span class="post-preview-author"> {{ author.name }} </span></p>
+                {% endif %}
+                {% endif %}
+            </div>
+    </a>
+</div>
+{% endfor %}
+{% if paginator.total_pages > 1 %}
+<div class="card-container">{% include pagination_links.html %}</div>
+{% endif %}
+</div>
+
