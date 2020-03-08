@@ -126,11 +126,11 @@ for author in authors:
     generate_posts(author)
 
 they_titles = [f for f in listdir(path_posts) if "-they-" in f]
-they_titles.sort()
+they_titles.sort(reverse=True)
 they_titles = list(dict.fromkeys([f.split("-")[-1].replace('.md', '') for f in they_titles]))
 
 our_titles = [f for f in listdir(path_posts) if "-we-" in f]
-our_titles.sort()
+our_titles.sort(reverse=True)
 our_titles = list(dict.fromkeys([f.split("-")[-1].replace('.md', '') for f in our_titles]))
 
 all_home_titles = []
