@@ -30,9 +30,11 @@ def is_title_ready_to_be_published(title):
 def generate_author(author):
     id_author = author['id']
     author_name = author['name']
+    author_image = author['image']
     os.mkdir(path_authors + '/' + id_author)
     contents = """---
 title_page_full: """ + author_name + """  
+title_author_image: """ + author_image + """ 
 pagination:
   enabled: true
   category: """ + id_author + """

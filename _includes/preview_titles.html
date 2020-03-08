@@ -2,7 +2,7 @@
     {% if include.hide_author %}
     <span class="placeholder-top">
         <img class="avatar" style="filter: grayscale(100%) contrast(120%)"
-             src="/assets/img/victor_albertos.jpeg" alt="Card image">
+             src="/assets/img/{{page.title_author_image}}" alt="Card image">
         <span class="title-with-avatar">{{page.title_page_full}}</span>
         <div class="wrapper-black-background-bottom">
 
@@ -11,7 +11,7 @@
 
     {% else %}
     <img class="card-img-top" style="filter: grayscale(100%) contrast(120%)"
-         src="/assets/img/polvos.jpg" alt="Card image">
+         src="/assets/img/{{page.page_image}}" alt="Card image">
     <div class="card-container black-background">
         <div class="wrapper-black-background-bottom">
             <span class="title-post-none">{{page.title_page_full}}</span>

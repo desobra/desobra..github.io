@@ -1,6 +1,7 @@
 - id: thomas_mann
   name: Thomas Mann
   category: they
+  image: 'thomas_mann.jpg'
   titles:
     - id: doctor_faustus
       name: Doctor Faustus

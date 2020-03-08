@@ -1,6 +1,7 @@
 - id: francisco_pons_arnau
   name: Francisco Pons Arnau
   category: image
+  image: 'francisco_pons_arnau.jpeg'
   titles:
     - id: comiendo_fruta
       name: Comiendo fruta

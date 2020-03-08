@@ -1,5 +1,6 @@
 - id: maurice_blanchot
   name: Maurice Blanchot
+  image: 'maurice_blanchot.jpg'
   category: they
   titles:
     - id: thomas_el_obscuro

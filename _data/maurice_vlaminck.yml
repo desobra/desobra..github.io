@@ -1,6 +1,7 @@
 - id: maurice_vlaminck
   name: Maurice de Vlaminck
   category: image
+  image: 'maurice_vlaminck.jpg.jpg'
   titles:
     - id: vue_de_village
       name: Vue de village

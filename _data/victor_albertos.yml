@@ -1,6 +1,7 @@
 - id: victor_albertos
   name: Víctor Albertos
   category: we
+  image: 'victor_albertos.jpeg'
   titles:
     - id: goc
       name: García o cualquier otro
