@@ -38,7 +38,7 @@ pagination:
   category: """ + id_author + """
 ---"""
     with open(path_authors + '/' + id_author + '/paginated.html', "w") as text_file:
-        text_file.write(contents)
+        text_file.write(contents.encode('ascii', 'ignore').decode('ascii'))
 
 
 def generate_title_pages(author):
