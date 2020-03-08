@@ -125,13 +125,20 @@ for author in authors:
     generate_title_pages(author)
     generate_posts(author)
 
+
+def f7(seq):
+    seen = set()
+    seen_add = seen.add
+    return [x for x in seq if not (x in seen or seen_add(x))]
+
+
 they_titles = [f for f in listdir(path_posts) if "-they-" in f]
 they_titles.sort(reverse=True)
-they_titles = list(dict.fromkeys([f.split("-")[-1].replace('.md', '') for f in they_titles]))
+they_titles = list(f7([f.split("-")[-1].replace('.md', '') for f in they_titles]))
 
 our_titles = [f for f in listdir(path_posts) if "-we-" in f]
 our_titles.sort(reverse=True)
-our_titles = list(dict.fromkeys([f.split("-")[-1].replace('.md', '') for f in our_titles]))
+our_titles = list(f7([f.split("-")[-1].replace('.md', '') for f in our_titles]))
 
 all_home_titles = []
 
