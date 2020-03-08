@@ -140,8 +140,7 @@ for i in range(len(they_titles)):
     if i < len(our_titles):
         all_home_titles.append(our_titles[i])
 
-i = 0
-
+print(all_home_titles)
 d = datetime.today()
 
 for home_title in all_home_titles:
