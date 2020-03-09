@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	    e.stopPropagation()
 		e.preventDefault()
 		window.open('/punctum',"_self");
+		//window.close()
 	};
 
 	Array.from(document.getElementsByClassName("lg-close"))

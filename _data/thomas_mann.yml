@@ -8,7 +8,6 @@
       year: 1947
       format-title: italic
       image: 'doctor-faustus.png'
-      image-reference: 'desconocida'
       image-pct-contrast: '110'
       fragments:
         - number: 'f3'

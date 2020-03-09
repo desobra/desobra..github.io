@@ -38,7 +38,7 @@
     <title>{{title.name}}</title>
     {% endif %}
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto|Vidaloka" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Vidaloka|Roboto+Condensed" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="/assets/js/search.js"></script>
     <script src="/assets/js/start-gallery.js"></script>
@@ -69,7 +69,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            {% if page.title == 'Aquellos polvos' %}
+            {% if page.title_page == 'Polvos' %}
             <li class="nav-item active">
                 <a class="nav-link link-nav-bar" href="/polvos">Polvos</a>
             </li>
@@ -78,7 +78,7 @@
                 <a class="nav-link link-nav-bar" href="/polvos">Polvos</a>
             </li>
             {% endif %}
-            {% if page.title == 'Estos lodos' %}
+            {% if page.title_page == 'Lodos' %}
             <li class="nav-item active">
                 <a class="nav-link" href="/lodos">Lodos</a>
             </li>
