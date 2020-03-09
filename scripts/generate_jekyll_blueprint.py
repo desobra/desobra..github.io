@@ -71,7 +71,7 @@ categories: [""" + author_category + """, """ + author_id + """]
 ---"""
             file_post_name = path_posts + '/' + title[
                 'publication-date'] + '-' + author_category + '-' + id_title + '.md'
-            with open(file_post_name, "w", encoding='utf-8') as text_file:
+            with io.open(file_post_name, mode='w', encoding='utf-8') as text_file:
                 text_file.write(contents.encode('utf-8').decode('utf-8'))
         else:
             if only_first_fragment:
