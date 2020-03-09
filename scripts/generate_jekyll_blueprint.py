@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import yaml
 import os
 from os import listdir
