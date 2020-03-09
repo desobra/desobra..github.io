@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import yaml
 import os
 from os import listdir
@@ -7,6 +5,7 @@ from os.path import isfile, join
 import shutil
 from itertools import cycle, islice
 from datetime import datetime, timedelta
+import io
 
 
 def clear_previous_generated_folder(path):
@@ -43,7 +42,7 @@ pagination:
   enabled: true
   category: """ + id_author + """
 ---"""
-    with open(path_authors + '/' + id_author + '/paginated.html', "w", encoding='utf-8') as text_file:
+    with io.open(path_authors + '/' + id_author + '/paginated.html', mode='w', encoding='utf-8') as text_file:
         text_file.write(contents.encode('utf-8').decode('utf-8'))
 
 
@@ -56,7 +55,7 @@ def generate_title_pages(author):
         if is_title_ready_to_be_published(title):
             id_title = title['id']
             contents = '---\ntitle_id: ' + id_title + '\n---'
-            with open(path_titles + '/' + id_title + '.md', "w", encoding='utf-8') as text_file:
+            with io.open(path_titles + '/' + id_title + '.md', mode='w', encoding='utf-8') as text_file:
                 text_file.write(contents.encode('utf-8').decode('utf-8'))
 
 
@@ -91,7 +90,8 @@ categories: [""" + author_category + """, """ + author_id + """]
 ---"""
                 file_post_name = path_posts + '/' + fragment[
                     'publication-date'] + '-' + author_category + '-' + id_title + '.md'
-                with open(file_post_name, "w", encoding='utf-8') as text_file:
+
+                with io.open(file_post_name, mode='w', encoding='utf-8') as text_file:
                     text_file.write(contents.encode('utf-8').decode('utf-8'))
 
 
@@ -149,7 +149,6 @@ for i in range(len(they_titles)):
     if i < len(our_titles):
         all_home_titles.append(our_titles[i])
 
-print(all_home_titles)
 d = datetime.today()
 
 for home_title in all_home_titles:
