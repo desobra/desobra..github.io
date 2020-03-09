@@ -1,0 +1,10 @@
+- id: sample_4
+  name: Sample 4 Autor
+  category: image
+  image: 'sample_4.jpeg'
+  titles:
+    - id: sample_4_imagen
+      name: Sample 4 Imagen
+      publication-date: '2020-01-22'
+      year: 1933
+      image: sample_4.jpeg

@@ -13,7 +13,7 @@
   }
 
   .grayscale { 
-    filter: grayscale(100%) contrast(150%); 
+    filter: grayscale(90%) contrast(120%); 
   }
 
 .grid-container {
@@ -25,10 +25,6 @@
   .grid-container  {
     grid-template-columns: auto;
   }
-}
-
-.grid-item {
-  padding: 15px;
 }
 
 .highlight-fragment {
@@ -116,7 +112,7 @@ p {
 }
 
 .wrapper-black-background-right-bottom {
-  margin-top: 16.25rem;
+  margin-top: 11.25rem;
 }
 
 .card-img-top { 
@@ -166,7 +162,6 @@ footer {
 img {
   display: block;
   max-width: 100%;
-  margin: 0 0 1rem;
   border-radius: 4px;
 }
 
@@ -412,7 +407,6 @@ a.black:hover {
 }
 
 }
-
 .card-container-preview-title {
     @extend .card-container;
 }
@@ -426,4 +420,37 @@ a.black:hover {
 .navbar-expand-lg {
   margin:0 !important;
   padding: .2rem 1rem !important;
+}
+
+.grid-item {
+  position: relative;
+  padding: 1rem;
+}
+
+.punctum-actions-container {
+  position: absolute;
+  right: 1rem;
+  left: 1rem;
+  bottom: 1rem;
+  background-color: rgba(0,0,0,0.75);
+  border-radius: 0 0 4px 4px;
+  padding: .4rem;
+}
+
+.punctum-icon {
+  color: rgba(255,255,255,0.75)!important;
+  font-size: 1em;
+}
+
+.punctum-icon:hover {
+  color: rgba(255,255,255,0.95)!important;
+}
+
+.title-punctum {
+  width: auto;
+  color: white;
+}
+
+.fa-lg {
+  line-height: 1.5rem
 }

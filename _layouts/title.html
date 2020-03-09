@@ -42,10 +42,7 @@ layout: default
 		{% capture twitter_url_to_share %}
 			https://desobra.org/titles/{{title.id}}
 		{% endcapture %}
-		{% capture text_to_share %}
-			{{title.name}} ({{title.year}}), {{author.name}}
-		{% endcapture %}
-        <div><a href="https://twitter.com/share?url={{twitter_url_to_share}}&text={{text_to_share}}" class="fa fa-margin-right white fa-twitter-square fa-lg"></a></div> 
+        <div><a href="https://twitter.com/share?url={{twitter_url_to_share}}" class="fa fa-margin-right white fa-twitter-square fa-lg"></a></div> 
 
         {% capture facebook_url_to_share %}
 			https://desobra.org/titles/{{title.id}}

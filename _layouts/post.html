@@ -15,13 +15,9 @@ layout: default
 	This is only used by post images
  -->
 {% if author.category == 'image' %} 
-	<span class="title-post-black">{{ title.name }}</span><span class="date-post-black"> ({{ title.year }})</span>
+    <script src="/assets/js/redirect-to-punctum-on-close.js"></script>
 
-	</br>
-	<hr class="divider">
-	<span class="author-post-black"><a href="../../../../../../authors/{{author.id}}">{{ author.name }}</a></span>
-
-	<br><br><br>
-
-	<img src="/assets/img/{{title.image}}" class="center-image" alt="{{title.name}}"/>
+	<div id="lightgallery">
+	    <a id="open-it"  href="/assets/img/{{title.image}}" data-sub-html="<i>{{ title.name }}</i> ({{ title.year }}), <span> {{ author.name }} </span>"></a>
+	</div>
 {% endif %}

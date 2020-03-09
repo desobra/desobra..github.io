@@ -42,7 +42,7 @@ pagination:
   category: """ + id_author + """
 ---"""
     with open(path_authors + '/' + id_author + '/paginated.html', "w") as text_file:
-        text_file.write(contents.encode('ascii', 'ignore').decode('ascii'))
+        text_file.write(contents.encode('utf-8', 'ignore').decode('utf-8'))
 
 
 def generate_title_pages(author):
@@ -55,7 +55,7 @@ def generate_title_pages(author):
             id_title = title['id']
             contents = '---\ntitle_id: ' + id_title + '\n---'
             with open(path_titles + '/' + id_title + '.md', "w") as text_file:
-                text_file.write(contents.encode('ascii', 'ignore').decode('ascii'))
+                text_file.write(contents.encode('utf-8', 'ignore').decode('utf-8'))
 
 
 def generate_post(title, author_category, author_id, only_first_fragment=False):
@@ -71,7 +71,7 @@ categories: [""" + author_category + """, """ + author_id + """]
             file_post_name = path_posts + '/' + title[
                 'publication-date'] + '-' + author_category + '-' + id_title + '.md'
             with open(file_post_name, "w") as text_file:
-                text_file.write(contents.encode('ascii', 'ignore').decode('ascii'))
+                text_file.write(contents.encode('utf-8', 'ignore').decode('utf-8'))
         else:
             if only_first_fragment:
                 _fragments = fragments[0:1]
@@ -90,7 +90,7 @@ categories: [""" + author_category + """, """ + author_id + """]
                 file_post_name = path_posts + '/' + fragment[
                     'publication-date'] + '-' + author_category + '-' + id_title + '.md'
                 with open(file_post_name, "w") as text_file:
-                    text_file.write(contents.encode('ascii', 'ignore').decode('ascii'))
+                    text_file.write(contents.encode('utf-8', 'ignore').decode('utf-8'))
 
 
 def generate_posts(author):
