@@ -15,12 +15,12 @@ layout: default
 <div class="card" style="width:100%">
 	{% if title.fragments and title.image %}
 		<div class="sticky-region">
-	{% else if title.fragments and title.image == blank %}
+	{% elsif title.fragments %}
 		<div class="sticky-region region-black">
-	{% else and title.image == blank %}
-		<div class="no-sticky-region region-black">
-	{% else %}
+	{% elsif title.image %}
 		<div class="no-sticky-region">
+	{% else %}
+		<div class="no-sticky-region region-black">
 	{% endif %}
 
 	{% if title.image %}
@@ -39,7 +39,7 @@ layout: default
 	<a href="../../authors/{{author.id}}"><span class="author-post">{{ author.name }}</span></a>
 	</div>
 
- 	<div class="float-right wrapper-black-background-right-bottom">
+ 	<div id="title-icons" class="float-right">
 
 		<div class="row icons-share-cover-image">
 		{% capture twitter_url_to_share %}
@@ -69,7 +69,7 @@ layout: default
 		{% endif %}
 	{% endfor %}
 {% else %}
-	<div class="card-container"><p>{{title.text}}</p></div>
+	<div preview="{{title.preview}}" class="card-container"><p>{{title.text}}</p></div>
 {% endif %}
 
 <script src="/assets/js/highlight-fragment.js"></script>

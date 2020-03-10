@@ -42,8 +42,8 @@
     <meta name="twitter:site" content="@_desobra"/>
     <meta name="twitter:creator" content="@_desobra" />
 
-    {% if page.title_page %}
-    <title>{{page.title_page}}</title>
+    {% if page.title_page_full %}
+    <title>{{page.title_page_full}}</title>
     {% else %}
     <title>{{title.name}}</title>
     {% endif %}
@@ -97,7 +97,7 @@
                 <a class="nav-link" href="/lodos">Lodos</a>
             </li>
             {% endif %}
-            {% if page.title == 'Punctum' %}
+            {% if page.title_page == 'Punctum' %}
             <li class="nav-item active">
                 <a class="nav-link" href="/punctum"><em>Punctum</em></a>
             </li>
@@ -106,7 +106,7 @@
                 <a class="nav-link" href="/punctum"><em>Punctum</em></a>
             </li>
             {% endif %}
-            {% if page.title == 'Morada' %}
+            {% if page.title_page == 'Morada' %}
             <li class="nav-item active">
                 <a class="nav-link" href="/morada">Morada</a>
             </li>
@@ -115,7 +115,7 @@
                 <a class="nav-link" href="/morada">Morada</a>
             </li>
             {% endif %}
-            {% if page.title == 'Buscar' %}
+            {% if page.title_page == 'Buscar' %}
             <li class="nav-item active">
                 <a class="nav-link" href="/morada">Buscar</a>
             </li>
