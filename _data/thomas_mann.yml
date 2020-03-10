@@ -1,15 +1,27 @@
 - id: thomas_mann
   name: Thomas Mann
   category: they
-  image: 'thomas_mann.jpg'
+  image:
+    name: 'thomas_mann.jpg'
   titles:
     - id: doctor_faustus
       name: Doctor Faustus
       year: 1947
       format-title: italic
-      image: 'doctor-faustus.png'
       image-pct-contrast: '110'
       fragments:
+        - number: 'f7'
+          publication-date: '2020-02-09'
+          text: '«¿Por qué han de aparecérseme casi todas las cosas como su propia parodia? ¿Por qué ha de parecerme que casi todos, más aún, que todos los medios y reglas del arte sólo son útiles hoy para la parodia?».'
+        - number: 'f6'
+          publication-date: '2020-02-08'
+          text: '«¿Por qué han de aparecérseme casi todas las cosas como su propia parodia? ¿Por qué ha de parecerme que casi todos, más aún, que todos los medios y reglas del arte sólo son útiles hoy para la parodia?».'
+        - number: 'f5'
+          publication-date: '2020-02-07'
+          text: '«¿Por qué han de aparecérseme casi todas las cosas como su propia parodia? ¿Por qué ha de parecerme que casi todos, más aún, que todos los medios y reglas del arte sólo son útiles hoy para la parodia?».'
+        - number: 'f4'
+          publication-date: '2020-02-06'
+          text: '«¿Por qué han de aparecérseme casi todas las cosas como su propia parodia? ¿Por qué ha de parecerme que casi todos, más aún, que todos los medios y reglas del arte sólo son útiles hoy para la parodia?».'
         - number: 'f3'
           publication-date: '2020-02-05'
           preview: '«Kretzschmar llamaba la atención sobre la debilidad de ciertos pasajes, recomendaba un perfil más acentuado para ciertos temas, una mayor vitalidad para un ritmo demasiado rígido. Señalaba con el dedo tal frase de transición que sólo se aguantaba superficialmente, que carecía de justificación orgánica y que, por consiguiente, comprometía el desenvolvimiento natural de la composición [...]'

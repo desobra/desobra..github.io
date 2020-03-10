@@ -11,7 +11,7 @@
           appendString += `
           <p>
             <a href="${results[i].ref}"><div>
-            <img src="/assets/img/${item.image}" width="400px" height="350px" class="centered-and-cropped grayscale"/>
+            <img src="/assets/img/${item.image}" width="400px" height="350px" class="centered-and-cropped"/>
             <br>
             <p><span class="post-preview-title-italic">${item.title}</span>, <span class="post-preview-author"> ${item.author} </span></p>
             </div></a> 

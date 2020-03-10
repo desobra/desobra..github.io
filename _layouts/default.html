@@ -20,10 +20,10 @@
     {% endfor %}
     {% endfor %}
     {% if page.title_id %}
-    <meta property="og:image" content="https://desobra.org/assets/img/{{title.image}}"/>
+    <meta property="og:image" content="https://desobra.org/assets/img/{{title.image.name}}"/>
     <meta property="og:title" content="{{title.name}} ({{title.year}}), {{author.name}}"/>
     <meta name="twitter:text:title" content="{{title.name}} ({{title.year}}), {{author.name}}"/>
-    <meta name="twitter:image" content="https://desobra.org/assets/img/{{title.image}}"/>
+    <meta name="twitter:image" content="https://desobra.org/assets/img/{{title.image.name}}"/>
     <meta name="twitter:card" content="summary_large_image"/>
     <script src="/assets/js/add-og-tags.js"></script>
     {% endif %}

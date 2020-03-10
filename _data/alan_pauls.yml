@@ -1,11 +1,18 @@
 - id: alan_pauls
   name: Alan Pauls
-  image: 'alan_pauls.jpg'
+  image:
+      name: 'alan_pauls.jpeg'
+      color: 0
   category: they
   titles:
     - id: matias_falco_entrevista_alan_pauls
       name: Entrevista
       year: 2018
+      image:
+        name: 'goc.jpeg'
+        color: 0.05
+        contrast: 1.5
+        reference: 'Alex Timmermans. «Tea for two» (2017), en <i> Storytelling</i>.'
       format-title: none
       reference: 'Entrevista hecha por Matías Falco. Publicada en <i>Infobae</i> el 29 de septiembre de 2018.'
       fragments:

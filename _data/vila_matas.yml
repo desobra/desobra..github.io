@@ -1,7 +1,8 @@
 - id: vila_matas
   name: Enrique Vila-Matas
   category: they
-  image: 'vila_matas.jpg'
+  image:
+    name: 'vila_matas.jpg'
   titles:
     - id: apartarse_de_uno_mismo
       name: Apartarse de uno mismo

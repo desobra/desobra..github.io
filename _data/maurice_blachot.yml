@@ -1,14 +1,19 @@
 - id: maurice_blanchot
   name: Maurice Blanchot
-  image: 'maurice_blanchot.jpg'
+  image:
+    name: 'maurice_blanchot.jpg'
+    contrast: 1.5
   category: they
   titles:
     - id: thomas_el_obscuro
       name: Thomas el obscuro
       year: 1982
       format-title: italic
-      image: 'thomas-obscuro.jpeg'
-      image-reference: 'Patricia March. <i>Intitulada</i> (2011).'
+      image:
+        name: 'thomas-obscuro.jpeg'
+        color: 0.3
+        contrast: 1.5
+        reference: 'Patricia March. <i>Intitulada</i> (2011).'
       fragments:
         - number: 'f2'
           publication-date: '2020-01-14'

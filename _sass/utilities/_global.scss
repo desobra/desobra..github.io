@@ -12,10 +12,6 @@
     object-fit: cover;
   }
 
-  .grayscale { 
-    filter: grayscale(90%) contrast(120%); 
-  }
-
 .grid-container {
   display: grid;
   grid-template-columns: auto auto;
@@ -77,13 +73,6 @@ p {
   border-radius: 4px;
 }
 
-.card-container {
-  padding: 2rem;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 2px solid #fafafa;
-}
-
 @media only screen and (max-width: 768px) {
   .card-container {
     padding: 1rem;
@@ -97,12 +86,16 @@ p {
 }
 
 .black-background {
-  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)); 
+  background-image: linear-gradient(rgba(0, 0, 0, 0),
+  rgba(0, 0, 0, 0),
+  rgba(0, 0, 0, 0.3),
+  rgba(0, 0, 0.3, 0.5),
+  rgba(0, 0, 0.5, 1));
   padding-top: 1rem;
   padding-bottom: 1rem;
   position: absolute;
   width: 100%;
-  height:17rem;
+  height:inherit;
 }
 
 .wrapper-black-background-bottom {
@@ -112,15 +105,47 @@ p {
 }
 
 .wrapper-black-background-right-bottom {
-  margin-top: 13.25rem;
+  margin-top: 13.75rem;
+}
+
+.sticky-region {
+  position: sticky;
+  height:18rem;
+  width: 100%;
+  top: 0;
+}
+
+.region-black {
+  background: black;
+}
+
+.no-sticky-region {
+  height:18rem;
+  width: 100%;
 }
 
 .card-img-top { 
   object-fit: cover;
   width: 100%;
-  height:17rem; 
+  height:inherit;
   border-radius: 4px 4px 0 0;
   margin: 0 0 0;
+  position: absolute;
+}
+
+.card-container-header {
+  padding: 2rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  position: absolute;
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.20);
+}
+
+.card-container {
+  padding: 2rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #fafafa;
 }
 
 html {
@@ -440,5 +465,7 @@ a.black:hover {
 }
 
 .preview-text {
-  margin-top: .5rem;
+  margin-top: 1.25rem;
 }
+
+

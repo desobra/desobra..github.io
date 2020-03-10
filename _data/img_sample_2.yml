@@ -1,10 +1,12 @@
 - id: sample_2
   name: Sample 2 Autor
   category: image
-  image: 'sample_2.jpeg'
   titles:
     - id: sample_2_imagen
       name: Sample 2 Imagen
       publication-date: '2020-01-20'
       year: 1933
-      image: sample_2.jpeg
+      image:
+        name: 'sample_2.jpeg'
+        color: 0.15
+        contrast: 1.5

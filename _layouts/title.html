@@ -13,18 +13,21 @@ layout: default
 {% endfor %}
 
 <div class="card" style="width:100%">
-	{% if title.image %}
-
-		{% if title.image-pct-contrast %}
-		<img class="card-img-top" style="filter: grayscale(100%) contrast({{title.image-pct-contrast}}%)"src="/assets/img/{{title.image}}" alt="Card image">
-		{% else %}
-		<img class="card-img-top" style="filter: grayscale(100%) contrast(120%)"src="/assets/img/{{title.image}}" alt="Card image">
-		{% endif %}
+	{% if title.fragments and title.image %}
+		<div class="sticky-region">
+	{% else if title.fragments and title.image == blank %}
+		<div class="sticky-region region-black">
+	{% else and title.image == blank %}
+		<div class="no-sticky-region region-black">
 	{% else %}
-		<img class="card-img-top" style="filter: grayscale(100%) contrast(120%)" src="/assets/img/desobra-landscape-post.jpeg" alt="Card image">
+		<div class="no-sticky-region">
 	{% endif %}
- <div class="card-container black-background">
- 	<div class="wrapper-black-background-bottom">
+
+	{% if title.image %}
+		<img class="card-img-top" src="/assets/img/{{title.image.name}}" alt="Card image">
+	{% endif %}
+ <div class="card-container-header black-background">
+ 	<div id="container-title" class="wrapper-black-background-bottom">
 	{% if title.format-title == 'italic' %}
 	  <a href="/titles/{{title.id}}"><span class="title-post-italic">{{ title.name }}</span><span class="date-post"> ({{ title.year }})</span></a>
 	{% elsif title.format-title == 'quotes' %}
@@ -51,6 +54,7 @@ layout: default
     </div>
 </div>
 </div>
+</div>
 
 {% if title.fragments %}
 	{% for fragment in title.fragments %}
@@ -73,8 +77,8 @@ layout: default
 {% if title.reference %}
 	<div class="card-container"><p>Texto: {{title.reference}}</p></div>
 {% endif %}
-{% if title.image-reference %}
-	<div class="card-container"><p>Imagen: {{title.image-reference}}</p></div>
+{% if title.image.reference %}
+	<div class="card-container"><p>Imagen: {{title.image.reference}}</p></div>
 {% endif %}
 
 </div>

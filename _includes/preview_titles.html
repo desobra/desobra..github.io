@@ -1,7 +1,7 @@
 <div class="card" style="width:100%">
     {% if include.hide_author %}
     <span class="placeholder-top">
-        <img class="avatar" style="filter: grayscale(100%) contrast(120%)"
+        <img class="avatar"
              src="/assets/img/{{page.title_author_image}}" alt="Card image">
         <span class="title-with-avatar">{{page.title_page_full}}</span>
         <div class="wrapper-black-background-bottom">
@@ -10,12 +10,14 @@
     </span>
 
     {% else %}
-    <img class="card-img-top" style="filter: grayscale(100%) contrast(120%)"
+    <div class="no-sticky-region">
+    <img class="card-img-top"
          src="/assets/img/{{page.page_image}}" alt="Card image">
     <div class="card-container black-background">
         <div class="wrapper-black-background-bottom">
             <span class="title-post-none">{{page.title_page_full}}</span>
         </div>
+    </div>
     </div>
     {% endif %}
     {% for post in paginator.posts %}
