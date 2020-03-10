@@ -28,7 +28,7 @@ window.store = {
     "{{ post.url }}": {
       "title": "{{ title.name | xml_escape }}",
       "author": "{{ author.name | xml_escape }}",
-      "image": "{{ title.image }}"
+      "image": "{{ title.image.name }}"
     {% else %} 
     "{{ post.url }}": {
       "title_id": "{{ title.id  | xml_escape}}",
