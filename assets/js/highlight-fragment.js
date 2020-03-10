@@ -19,12 +19,6 @@
 		var diffBetweenTitlePosAndRegionPos = topTextTitlePos - stickyRegionPos
 		stickyRegion.setAttribute("style", "top: -"+diffBetweenTitlePosAndRegionPos+"px;");
 
-		console.log('stickyRegionPos', stickyRegionPos)
-		console.log('topTextTitlePos', topTextTitlePos)
-		console.log('scrollY', -topTextTitle.offsetHeight)
-
-		//console.log('stickyRegion.top', stickyRegion.style.top)
-
 		var scrollY = convertRemToPixels(1) + topTextTitle.offsetHeight
 		window.scrollBy(0, -scrollY);
 	}, 1);
