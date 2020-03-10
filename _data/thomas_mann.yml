@@ -8,6 +8,9 @@
       name: Doctor Faustus
       year: 1947
       format-title: italic
+      image:
+        name: 'doctor-faustus.png'
+        contrast: 2
       image-pct-contrast: '110'
       fragments:
         - number: 'f7'

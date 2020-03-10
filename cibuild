@@ -14,7 +14,6 @@ git clone https://${GH_TOKEN}@github.com/VictorAlbertos/desobra-sources.git --br
 cd temp
 
 pip install pyyaml
-pip install Pillow
 python scripts/apply_filters_images.py
 python scripts/generate_jekyll_blueprint.py
 python scripts/prepare_gitignore_for_deployment.py
