@@ -1,7 +1,7 @@
 - id: alan_pauls
   name: Alan Pauls
-  image: 'alan_pauls.jpeg'
-  category: we
+  image: 'alan_pauls.jpg'
+  category: they
   titles:
     - id: matias_falco_entrevista_alan_pauls
       name: Entrevista
