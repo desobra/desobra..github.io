@@ -1,12 +1,15 @@
 - id: virginia_woolf
   name: Virginia Woolf
   image: 'virginia_woolf.jpg'
+  image-reference: 'Julia Margaret Cameron.'
   category: they
   titles:
     - id: como_deberia_leerse_un_libro
       name: Cómo debería leerse un libro
       year: 1926
       format-title: italic
+      image: 'the_rivulet_laita_in_quimperle_frits_thaulow.jpg'
+      image-reference: 'Frits Thaulow. <i> The rivulet Laita in Quimperlé</i>.'
       fragments:   
         - number: 'f1'
           publication-date: '2020-02-17'
