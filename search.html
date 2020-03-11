@@ -1,9 +1,106 @@
----
-title_page_full: Buscar
-title_page: Buscar
----
+<!doctype html>
+<html>
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160206315-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-<form action="/search.html" method="get">
+      gtag('config', 'UA-160206315-1');
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    <link rel='shortcut icon' type='image/x-icon' href='../../../../../../../../assets/img/favicon.ico'/>
+
+    <meta charset="UTF-8">
+    <meta property="og:site_name" content="Desobra">
+    
+    
+
+    <meta property="og:locale" content="es_ES"/>
+    <meta name="twitter:site" content="@_desobra"/>
+    <meta name="twitter:creator" content="@_desobra" />
+
+    
+    <title>Buscar</title>
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Vidaloka|Roboto+Condensed" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="/assets/js/search.js"></script>
+    <script src="/assets/js/start-gallery.js"></script>
+    <script src="/assets/js/disable_hover_scroll.js"></script>
+    <script src="/assets/js/subscription-newsletter.js"></script>
+    <script src="/assets/lightgallery/js/lightgallery.min.js"></script>
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/assets/lightgallery/css/lightgallery.css" type="text/css">
+
+
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/apple-touch-icon.png">
+</head>
+<body bgcolor="#DCDCDC">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand title" href="/">DESOBRA</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            
+            <li class="nav-item">
+                <a class="nav-link link-nav-bar" href="/polvos">Polvos</a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/lodos">Lodos</a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/punctum"><em>Punctum</em></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/morada">Morada</a>
+            </li>
+            
+            
+            <li class="nav-item active">
+                <a class="nav-link" href="/morada">Buscar</a>
+            </li>
+            
+        </ul>
+        <div class="form-inline my-2 my-lg-0">
+            <div><a href="#" data-toggle="modal" data-target="#submit-modal" data-whatever="@mdo"
+                    class="fa white fa-margin-right fa-envelope fa-lg"></a></div>
+            <div><a href="https://twitter.com/_desobra" class="fa white fa-margin-right fa-twitter-square fa-lg"></a></div>
+            <div><a href="https://www.instagram.com/_desobra_/" class="fa white fa-margin-right fa-instagram fa-lg"></a></div>
+            <div><a href="https://www.facebook.com/Desobra-104415927842411" class="fa white fa-facebook-square fa-lg"></a></div>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div id="subscribe-feedback"/>
+    <form action="/search.html" method="get">
   <div class="form-group fg--search">
     <input type="text" class="input" placeholder="Buscar por título o autor " id="search-box" name="query">
     <button type="submit"><i class="fa fa-search"></i></button>
@@ -15,55 +112,484 @@ title_page: Buscar
 
 <script>
 window.store = {
-  {% for post in site.posts %}
-    {% for file_name_author in site.data %}
-      {% if file_name_author[1][0].id == post.categories[1] %}
-      {% assign author = file_name_author[1][0] %}
-      {% endif %}
-    {% endfor %}
-    {% assign title = author.titles | where: 'id', post.title_id | first %}
-    {% assign fragment = title.fragments | where: 'number', post.fragment | first %}
+  
+    
+    
+    
 
-    {% if post.categories[0] == "image" %}
-    "{{ post.url }}": {
-      "title": "{{ title.name | xml_escape }}",
-      "author": "{{ author.name | xml_escape }}",
-      "image": "{{ title.image.name }}"
-    {% else %} 
-    "{{ post.url }}": {
-      "title_id": "{{ title.id  | xml_escape}}",
-      "title": "{{ title.name | xml_escape }}",
-      "author": "{{ author.name | xml_escape }}",
-      {% if fragment %}
-        {% if fragment.preview %}
-          "excerpt": "{{ fragment.preview | strip_html | strip_newlines }}",
-        {% else %}
-          "excerpt": "{{ fragment.text | strip_html | strip_newlines }}",
-        {% endif %}
-      {% else %}
-        {% if title.preview %}
-          "excerpt": "{{ title.preview | strip_html | strip_newlines }}",
-        {% else %}
-          "excerpt": "{{ title.text | strip_html | strip_newlines }}",
-        {% endif %}
-      {% endif %}
-      "fragment": "{{ fragment.number }}"
-    {% endif %} 
+     
+    "/home/alan_pauls/2020/03/11/home-matias_falco_entrevista_alan_pauls.html": {
+      "title_id": "matias_falco_entrevista_alan_pauls",
+      "title": "Entrevista",
+      "author": "Alan Pauls",
+      
+        
+          "excerpt": "«La tercera persona me permite decir cosas que de otro modo me avergonzaría decir o no las diría con tanta soltura. Es como una especie de máscara muy simple y muy tonta, pero que produce un efecto muy eficaz: a mí me libera [...]",
+        
+      
+      "fragment": "f2"
+     
   }
-  {% unless forloop.last %},{% endunless %}
-  {% endfor %}
+  ,
+  
+    
+    
+    
+
+     
+    "/home/victor_albertos/2020/03/10/home-goc.html": {
+      "title_id": "goc",
+      "title": "García o cualquier otro",
+      "author": "Víctor Albertos",
+      
+        
+          "excerpt": "«¿He acabado ya con la bicicleta? Cabría preguntarse si ella ya ha acabado conmigo. Sigue aquí fielmente, la quiero tanto, y estoy seguro de que si rasco las costras superficiales de su metal llegaría a tocar la mierda pretérita del día inaugural; como el buen fósil qué es, codifica científicamente la miseria de mi vida. “Pero viejo García cualquiera, por qué te quejas tanto, ¿acaso las enfermeras no alimentan tu onanismo?, ¿no descorren el velo de sus párpados para dejarse palpar su superficie cerebral?, ¿no te basto yo?, ¿no te basta con la voz poética que tu delirio me concede?” [...]",
+        
+      
+      "fragment": "f2"
+     
+  }
+  ,
+  
+    
+    
+    
+
+     
+    "/home/virginia_woolf/2020/03/09/home-como_deberia_leerse_un_libro.html": {
+      "title_id": "como_deberia_leerse_un_libro",
+      "title": "Cómo debería leerse un libro",
+      "author": "Virginia Woolf",
+      
+        
+          "excerpt": "«¿No hay una ventana abierta a la derecha de la estantería? ¡Qué delicioso parar de leer y mirar fuera! ¡Qué estimulante es la escena, ajena a sí misma, en su irrelevancia, su movimiento perpetuo, los potros galopando por el campo, la mujer llenando su cubo en el pozo, el burro cabeceando y emitiendo su larga y acre queja! La mayor parte de cualquier biblioteca no es más que el registro de semejantes momentos efímeros en las vidas de hombres, mujeres y burros. Toda literatura, cuando envejece, tiene su pila de desperdicios, su registro de momentos desvanecidos y vidas olvidadas contadas con acentos débiles y entrecortados que han perecido. Pero si nos abandonamos al placer de leer desperdicios quedaremos sorprendidos, es más, sobrecogidos por las reliquias de vida humana que se han desechado para que se pudran».",
+        
+      
+      "fragment": "f1"
+     
+  }
+  ,
+  
+    
+    
+    
+
+     
+    "/home/victor_albertos/2020/03/08/home-bichos.html": {
+      "title_id": "bichos",
+      "title": "Bichos",
+      "author": "Víctor Albertos",
+      
+        
+          "excerpt": "«Ese sábado V. había decidido fumigar-se-los. Mis abuelos, cuya mayor torpeza consistía en seguir vivos, seguida de cerca por su desplazamiento bípedo, consentían en prolongar su existencia a cambio de poder olvidarse de ella. Ella tenía alzhéimer, que es el premio que el organismo concede a su huésped cuando este, conciencia consciente de sí misma, ya no es consciente de otra cosa que del lento borrado de esas facultades que habían estado al servicio de un simulacro tan real como lo era la impresión de tener una conciencia. Mi abuelo, que no tenía aún el don de los muertos, miraba a mi abuela con el mismo interés que un suicida estudia estadísticas de decesos [...]",
+        
+      
+      "fragment": ""
+     
+  }
+  ,
+  
+    
+    
+    
+
+     
+    "/home/vila_matas/2020/03/07/home-apartarse_de_uno_mismo.html": {
+      "title_id": "apartarse_de_uno_mismo",
+      "title": "Apartarse de uno mismo",
+      "author": "Enrique Vila-Matas",
+      
+        
+          "excerpt": "«Parece una pérdida de tiempo esa amargura absurda de Ribeyro por llegar a creerse que no estaba a la altura de esas novelas de narradores sumamente omniscientes que algunos lectores de hoy percibimos ya un tanto monstruosas en todos los sentidos [...]",
+        
+      
+      "fragment": "f2"
+     
+  }
+  ,
+  
+    
+    
+    
+
+     
+    "/home/thomas_mann/2020/03/06/home-doctor_faustus.html": {
+      "title_id": "doctor_faustus",
+      "title": "Doctor Faustus",
+      "author": "Thomas Mann",
+      
+        
+          "excerpt": "«Kretzschmar llamaba la atención sobre la debilidad de ciertos pasajes, recomendaba un perfil más acentuado para ciertos temas, una mayor vitalidad para un ritmo demasiado rígido. Señalaba con el dedo tal frase de transición que sólo se aguantaba superficialmente, que carecía de justificación orgánica y que, por consiguiente, comprometía el desenvolvimiento natural de la composición [...]",
+        
+      
+      "fragment": "f3"
+     
+  }
+  ,
+  
+    
+    
+    
+
+     
+    "/home/maurice_blanchot/2020/03/05/home-thomas_el_obscuro.html": {
+      "title_id": "thomas_el_obscuro",
+      "title": "Thomas el obscuro",
+      "author": "Maurice Blanchot",
+      
+        
+          "excerpt": "«Pronto la noche le pareció más sombría, más terrible que cualquier otra noche, como si brotara realmente de una herida del pensamiento que ya no podía pensarse, del pensamiento tomado irónicamente como objeto por algo distinto al pensamiento [...]",
+        
+      
+      "fragment": "f2"
+     
+  }
+  ,
+  
+    
+    
+    
+
+     
+    "/they/alan_pauls/2020/02/17/they-matias_falco_entrevista_alan_pauls.html": {
+      "title_id": "matias_falco_entrevista_alan_pauls",
+      "title": "Entrevista",
+      "author": "Alan Pauls",
+      
+        
+          "excerpt": "«La tercera persona me permite decir cosas que de otro modo me avergonzaría decir o no las diría con tanta soltura. Es como una especie de máscara muy simple y muy tonta, pero que produce un efecto muy eficaz: a mí me libera [...]",
+        
+      
+      "fragment": "f2"
+     
+  }
+  ,
+  
+    
+    
+    
+
+     
+    "/they/virginia_woolf/2020/02/17/they-como_deberia_leerse_un_libro.html": {
+      "title_id": "como_deberia_leerse_un_libro",
+      "title": "Cómo debería leerse un libro",
+      "author": "Virginia Woolf",
+      
+        
+          "excerpt": "«¿No hay una ventana abierta a la derecha de la estantería? ¡Qué delicioso parar de leer y mirar fuera! ¡Qué estimulante es la escena, ajena a sí misma, en su irrelevancia, su movimiento perpetuo, los potros galopando por el campo, la mujer llenando su cubo en el pozo, el burro cabeceando y emitiendo su larga y acre queja! La mayor parte de cualquier biblioteca no es más que el registro de semejantes momentos efímeros en las vidas de hombres, mujeres y burros. Toda literatura, cuando envejece, tiene su pila de desperdicios, su registro de momentos desvanecidos y vidas olvidadas contadas con acentos débiles y entrecortados que han perecido. Pero si nos abandonamos al placer de leer desperdicios quedaremos sorprendidos, es más, sobrecogidos por las reliquias de vida humana que se han desechado para que se pudran».",
+        
+      
+      "fragment": "f1"
+     
+  }
+  ,
+  
+    
+    
+    
+
+     
+    "/they/alan_pauls/2020/02/16/they-matias_falco_entrevista_alan_pauls.html": {
+      "title_id": "matias_falco_entrevista_alan_pauls",
+      "title": "Entrevista",
+      "author": "Alan Pauls",
+      
+        
+          "excerpt": "«Creo que la lectura tiene mucho de residual; es una de sus potencias. Tal vez los efectos más interesantes no aparecen a corto plazo, sino que van liberándose con el tiempo».",
+        
+      
+      "fragment": "f1"
+     
+  }
+  ,
+  
+    
+    
+    
+
+     
+    "/they/vila_matas/2020/02/14/they-apartarse_de_uno_mismo.html": {
+      "title_id": "apartarse_de_uno_mismo",
+      "title": "Apartarse de uno mismo",
+      "author": "Enrique Vila-Matas",
+      
+        
+          "excerpt": "«Parece una pérdida de tiempo esa amargura absurda de Ribeyro por llegar a creerse que no estaba a la altura de esas novelas de narradores sumamente omniscientes que algunos lectores de hoy percibimos ya un tanto monstruosas en todos los sentidos [...]",
+        
+      
+      "fragment": "f2"
+     
+  }
+  ,
+  
+    
+    
+    
+
+     
+    "/they/vila_matas/2020/02/13/they-apartarse_de_uno_mismo.html": {
+      "title_id": "apartarse_de_uno_mismo",
+      "title": "Apartarse de uno mismo",
+      "author": "Enrique Vila-Matas",
+      
+        
+          "excerpt": "«Siempre un insecto de alguna clase —un hermano y un teléfono también pueden serlo— acaba estropeándolo todo, permitiéndonos así poder echarle la culpa de que no hayamos escrito o leído algo que supere al Quijote. Sólo una vez, y en cualquier caso a lo largo de dos escuetas aunque fulgurantes décimas de segundo, accedí a ver con claridad la totalidad de un libro que estaba destinado a escribir y que comprendí que era tan bueno que superaría al Quijote [...]",
+        
+      
+      "fragment": "f1"
+     
+  }
+  ,
+  
+    
+    
+    
+
+     
+    "/they/thomas_mann/2020/02/05/they-doctor_faustus.html": {
+      "title_id": "doctor_faustus",
+      "title": "Doctor Faustus",
+      "author": "Thomas Mann",
+      
+        
+          "excerpt": "«Kretzschmar llamaba la atención sobre la debilidad de ciertos pasajes, recomendaba un perfil más acentuado para ciertos temas, una mayor vitalidad para un ritmo demasiado rígido. Señalaba con el dedo tal frase de transición que sólo se aguantaba superficialmente, que carecía de justificación orgánica y que, por consiguiente, comprometía el desenvolvimiento natural de la composición [...]",
+        
+      
+      "fragment": "f3"
+     
+  }
+  ,
+  
+    
+    
+    
+
+     
+    "/they/thomas_mann/2020/02/02/they-doctor_faustus.html": {
+      "title_id": "doctor_faustus",
+      "title": "Doctor Faustus",
+      "author": "Thomas Mann",
+      
+        
+          "excerpt": "«¿Por qué han de aparecérseme casi todas las cosas como su propia parodia? ¿Por qué ha de parecerme que casi todos, más aún, que todos los medios y reglas del arte sólo son útiles hoy para la parodia?».",
+        
+      
+      "fragment": "f2"
+     
+  }
+  ,
+  
+    
+    
+    
+
+     
+    "/they/thomas_mann/2020/02/01/they-doctor_faustus.html": {
+      "title_id": "doctor_faustus",
+      "title": "Doctor Faustus",
+      "author": "Thomas Mann",
+      
+        
+          "excerpt": "«Su suerte fue, sin embargo, grande, ya que antes de que expirara el plazo permitió Dios, en su bondad infinita, que cayera en manos de la Inquisición, y desde los primeros grados de la cuestión confesó, plenamente arrepentida, su crimen, lo que permiten pensar que no le fue negado el perdón de Dios. Fue a la muerte por su propia voluntad, declarando expresamente que, aun pudiendo evitarla, prefería resueltamente la hoguera, con tal de escapar así al poder del diablo [...]",
+        
+      
+      "fragment": "f1"
+     
+  }
+  ,
+  
+    
+    
+    
+
+    
+    "/image/sample_4/2020/01/22/image-sample_4_imagen.html": {
+      "title": "Sample 4 Imagen",
+      "author": "Sample 4 Autor",
+      "image": "sample_4.jpeg"
+     
+  }
+  ,
+  
+    
+    
+    
+
+    
+    "/image/sample_3/2020/01/21/image-sample_3_imagen.html": {
+      "title": "Sample 3 Imagen",
+      "author": "Sample 3 Autor",
+      "image": "sample_3.jpeg"
+     
+  }
+  ,
+  
+    
+    
+    
+
+    
+    "/image/sample_2/2020/01/20/image-sample_2_imagen.html": {
+      "title": "Sample 2 Imagen",
+      "author": "Sample 2 Autor",
+      "image": "sample_2.jpeg"
+     
+  }
+  ,
+  
+    
+    
+    
+
+    
+    "/image/sample_1/2020/01/18/image-sample_1_imagen.html": {
+      "title": "Sample 1 Imagen",
+      "author": "Sample 1 Autor",
+      "image": "sample_1.jpeg"
+     
+  }
+  ,
+  
+    
+    
+    
+
+     
+    "/we/victor_albertos/2020/01/17/we-goc.html": {
+      "title_id": "goc",
+      "title": "García o cualquier otro",
+      "author": "Víctor Albertos",
+      
+        
+          "excerpt": "«¿He acabado ya con la bicicleta? Cabría preguntarse si ella ya ha acabado conmigo. Sigue aquí fielmente, la quiero tanto, y estoy seguro de que si rasco las costras superficiales de su metal llegaría a tocar la mierda pretérita del día inaugural; como el buen fósil qué es, codifica científicamente la miseria de mi vida. “Pero viejo García cualquiera, por qué te quejas tanto, ¿acaso las enfermeras no alimentan tu onanismo?, ¿no descorren el velo de sus párpados para dejarse palpar su superficie cerebral?, ¿no te basto yo?, ¿no te basta con la voz poética que tu delirio me concede?” [...]",
+        
+      
+      "fragment": "f2"
+     
+  }
+  ,
+  
+    
+    
+    
+
+     
+    "/we/victor_albertos/2020/01/16/we-goc.html": {
+      "title_id": "goc",
+      "title": "García o cualquier otro",
+      "author": "Víctor Albertos",
+      
+        
+          "excerpt": "«Tiré la bicicleta al suelo para demostrarle lo poco que le importaba su hijo. Puta mierda de regalo. Ella se echó a llorar. Movido por su llanto la recogí cuidadosamente y la volví a estampar contra el suelo. Ella lloró más fuerte. Yo reí más alegremente (estaba riendo desde el principio de la escena, creo haberlo dicho ya). No sabía porqué me reía, pero sabía que no podría dejar de hacerlo hasta que ella parase de llorar [...]",
+        
+      
+      "fragment": "f1"
+     
+  }
+  ,
+  
+    
+    
+    
+
+     
+    "/we/victor_albertos/2020/01/15/we-bichos.html": {
+      "title_id": "bichos",
+      "title": "Bichos",
+      "author": "Víctor Albertos",
+      
+        
+          "excerpt": "«Ese sábado V. había decidido fumigar-se-los. Mis abuelos, cuya mayor torpeza consistía en seguir vivos, seguida de cerca por su desplazamiento bípedo, consentían en prolongar su existencia a cambio de poder olvidarse de ella. Ella tenía alzhéimer, que es el premio que el organismo concede a su huésped cuando este, conciencia consciente de sí misma, ya no es consciente de otra cosa que del lento borrado de esas facultades que habían estado al servicio de un simulacro tan real como lo era la impresión de tener una conciencia. Mi abuelo, que no tenía aún el don de los muertos, miraba a mi abuela con el mismo interés que un suicida estudia estadísticas de decesos [...]",
+        
+      
+      "fragment": ""
+     
+  }
+  ,
+  
+    
+    
+    
+
+     
+    "/they/maurice_blanchot/2020/01/14/they-thomas_el_obscuro.html": {
+      "title_id": "thomas_el_obscuro",
+      "title": "Thomas el obscuro",
+      "author": "Maurice Blanchot",
+      
+        
+          "excerpt": "«Pronto la noche le pareció más sombría, más terrible que cualquier otra noche, como si brotara realmente de una herida del pensamiento que ya no podía pensarse, del pensamiento tomado irónicamente como objeto por algo distinto al pensamiento [...]",
+        
+      
+      "fragment": "f2"
+     
+  }
+  ,
+  
+    
+    
+    
+
+     
+    "/they/maurice_blanchot/2020/01/13/they-thomas_el_obscuro.html": {
+      "title_id": "thomas_el_obscuro",
+      "title": "Thomas el obscuro",
+      "author": "Maurice Blanchot",
+      
+        
+          "excerpt": "«No le era posible abandonar su proyecto. Pues, ¿cómo habría podido callarse, ella, cuyo lenguaje estaba varios grados por debajo del silencio? ¿Dejar de estar allí? ¿Dejar de vivir? Otras tantas estratagemas irrisorias que no hubieran conseguido más que precipitar, con su muerte, cerrando todas las salidas, la carrera eterna en el laberinto del que, mientras tenía la perspectiva del tiempo, conservaba la esperanza de salir [...]",
+        
+      
+      "fragment": "f1"
+     
+  }
+  
+  
 };
 </script>
 <script src="/assets/js/lunr.js"></script>
 <script src="/assets/js/search.js"></script>
 
-{% assign author = site.data.authors | where: 'id', 'maurice_blanchot' | first %}
-{{author.name}}
-
-{% assign title = author.titles | where: 'id', 'thomas_obscuro' | first %}
-{{title.name}}
-
-{% assign fragment = title.fragments | where: 'number', 'f1' | first %}
-{{fragment.preview}}
 
 
+
+
+
+
+
+
+
+
+
+</div>
+<div class="modal fade" id="submit-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Subscribirse a Desobra</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="mc_embed_signup">
+                    <form action="https://desobra.us19.list-manage.com/subscribe/post?u=590e7b2ada0e4321b4c70780b&amp;id=52509fec18"
+                          method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+                          class="validate" target="_blank">
+                        <input id="email" name="EMAIL" onchange="validate();"
+                               onkeyup="validate();" onpaste="validate();" oninput="validate();" id="mce-EMAIL"
+                               type="email" class="form-control" aria-describedby="emailHelp"
+                               placeholder="Introduce email">
+                        <div class="modal-footer">
+                            <button id="btn-submit" type="submit" class="btn btn-dark" disabled="disabled">Enviar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
